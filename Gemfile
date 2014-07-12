@@ -8,9 +8,17 @@ gem 'spring', group: :development
 
 # Use postgresql as the database for Active Record
 gem 'pg'
+gem 'activerecord-postgis-adapter' # provides a special ActiveRecord adapter for talking to PostGIS and handling geospatial data
+
 
 # rails_12factor provides static asset serving and logging on Heroku
 gem 'rails_12factor', group: :production
+
+# Use RGeo, a geospatial data library for Ruby, and related modules
+gem 'rgeo'
+gem 'rgeo-geojson'
+gem 'rgeo-shapefile'
+gem 'dbf'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
