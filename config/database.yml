@@ -1,18 +1,21 @@
 default: &default
-  adapter: postgresql
+  adapter: postgis 
   encoding: unicode
   pool: 5
 
 development:
   <<: *default
   database: drought-monitor-api_development
+  schema_search_path: "public,postgis"
 
 test:
   <<: *default
   database: drought-monitor-api_test
+  schema_search_path: "public,postgis"
 
 production:
   <<: *default
   database: drought-monitor-api_production
   username: drought-monitor-api
   password: <%= ENV['DROUGHT-MONITOR-API_DATABASE_PASSWORD'] %>
+  schema_search_path: "public,postgis"
