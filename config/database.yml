@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: drought-monitor-api_development
+
+test:
+  <<: *default
+  database: drought-monitor-api_test
+
+production:
+  <<: *default
+  database: drought-monitor-api_production
+  username: drought-monitor-api
+  password: <%= ENV['DROUGHT-MONITOR-API_DATABASE_PASSWORD'] %>
