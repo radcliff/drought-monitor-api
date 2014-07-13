@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+def unzip_file (file_name, destination_path)
+  Zip::File.open(file_name) do |zip_file|
+   zip_file.each do |f|
+     f_path = File.join(destination_path, f.name)
+     FileUtils.mkdir_p(File.dirname(f_path))
+     zip_file.extract(f, f_path) unless File.exist?(f_path)
+   end
+  end
+end
+
+response = Typhoeus.get("http://data.biogeo.ucdavis.edu/data/gadm2/shp/USA_adm.zip")
+
+open("USA_adm.zip", "wb") do |file|
+  file.write(response.body)
+end
+
+unzip_file("USA_adm.zip", "./data")
+

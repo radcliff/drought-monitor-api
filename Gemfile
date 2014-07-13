@@ -19,6 +19,9 @@ gem 'rgeo-geojson'
 gem 'rgeo-shapefile'
 gem 'dbf'
 
+gem 'typhoeus'
+gem 'rubyzip'
+
 gem 'pry'
 gem 'pry-rails'
 
