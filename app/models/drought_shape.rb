@@ -1,6 +1,5 @@
-class County < ActiveRecord::Base
-  belongs_to :state
-  has_many :drought_shapes
+class DroughtShape < ActiveRecord::Base
+  belongs_to :county
 
   wgs84_proj4 = '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs'
   wgs84_wkt = <<WKT
@@ -19,5 +18,5 @@ WKT
   wgs84_factory = RGeo::Geographic.simple_mercator_factory(:srid => 4326,
     :proj4 => wgs84_proj4, :coord_sys => wgs84_wkt)
 
-  set_rgeo_factory_for_column(:boundary, wgs84_factory)
+  set_rgeo_factory_for_column(:shape, wgs84_factory)
 end
