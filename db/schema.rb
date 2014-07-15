@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715053708) do
+ActiveRecord::Schema.define(version: 20140715100341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,11 +34,13 @@ ActiveRecord::Schema.define(version: 20140715053708) do
     t.integer  "county_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.spatial  "shape",      limit: {:srid=>4326, :type=>"polygon"}
+    t.spatial  "shape",      limit: {:srid=>0, :type=>"geometry"}
+    t.integer  "state_id"
   end
 
   add_index "drought_shapes", ["county_id"], :name => "index_drought_shapes_on_county_id"
   add_index "drought_shapes", ["shape"], :name => "index_drought_shapes_on_shape", :spatial => true
+  add_index "drought_shapes", ["state_id"], :name => "index_drought_shapes_on_state_id"
 
   create_table "regions", force: true do |t|
     t.string   "name"
