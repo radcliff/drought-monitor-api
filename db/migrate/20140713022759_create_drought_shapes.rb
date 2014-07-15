@@ -4,7 +4,7 @@ class CreateDroughtShapes < ActiveRecord::Migration
       t.integer :date
       t.integer :dm
       t.references :county, index: true
-      t.polygon :shape, :srid => 4326
+      t.geometry :shape, :srid => 4326
 
       t.timestamps
     end
