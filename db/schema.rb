@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140715100341) do
     t.integer  "county_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.spatial  "shape",      limit: {:srid=>0, :type=>"geometry"}
+    t.spatial  "shape",      limit: {:srid=>4326, :type=>"geometry"}
     t.integer  "state_id"
   end
 
