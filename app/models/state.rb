@@ -1,6 +1,8 @@
 class State < ActiveRecord::Base
   belongs_to :region
   has_many :counties
+  has_many :drought_shapes, through: :counties
+  has_many :drought_shapes
 
   wgs84_proj4 = '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs'
   wgs84_wkt = <<WKT
