@@ -19,6 +19,8 @@ gem 'rgeo-geojson'
 gem 'rgeo-shapefile'
 gem 'dbf'
 
+gem 'topojson-rails'
+
 gem 'typhoeus'
 gem 'rubyzip'
 
