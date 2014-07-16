@@ -8,7 +8,7 @@ module GeojsonHelper
     geojson_object["features"] = []
 
     geometry_collection.each_with_index do |record, index|
-    feature = RGeo::GeoJSON::Feature.new(record.shape, index, {:properties => { :dm => record.dm } })
+    feature = RGeo::GeoJSON::Feature.new(record.shape, index, { :DM => record.dm } )
       geojson_object["features"].push(RGeo::GeoJSON.encode(feature))
     end
 
