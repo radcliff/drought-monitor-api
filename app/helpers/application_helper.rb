@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include AboutHelper
   include GeojsonHelper
   include TopojsonHelper
   
