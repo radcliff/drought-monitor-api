@@ -16,6 +16,8 @@ class DroughtshapesController < ApplicationController
       else
         render json: "not found - check query string and try again"
       end
+    else
+      render json: about
     end
   end
 end
