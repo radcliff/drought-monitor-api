@@ -62,3 +62,6 @@ RGeo::Shapefile::Reader.open("./data/USA_adm2.shp") do |file|
     index+=1
   end
 end
+
+`rm USA_adm.zip`
+
