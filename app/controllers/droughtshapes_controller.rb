@@ -13,6 +13,8 @@ class DroughtshapesController < ApplicationController
       else
         render json: "not found"
       end
+    else
+      render json: about
     end
   end
 end
