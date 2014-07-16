@@ -19,7 +19,7 @@ gem 'rgeo-geojson'
 gem 'rgeo-shapefile'
 gem 'dbf'
 
-gem 'topojson-rails'
+gem 'execjs'
 
 gem 'typhoeus'
 gem 'rubyzip'
