@@ -19,6 +19,7 @@ gem 'rgeo-geojson'
 gem 'rgeo-shapefile'
 gem 'dbf'
 
+# Run JavaScript code from Ruby
 gem 'execjs'
 
 gem 'typhoeus'
