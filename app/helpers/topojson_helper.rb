@@ -1,11 +1,13 @@
 module TopojsonHelper
-
+  
   def convert_to_topojson(geojson)
-    json_to_file(geojson, "drought")
-    `topojson -o drought-topo.json drought.json`
-    topojson = File.read ('drought-topo.json')
-    `rm drought.json`
-    `rm drought-topo.json`
+    collection = geojson.to_json
+
+    source = open('./lib/assets/topojson.js').read
+    context = ExecJS.compile(source)
+    
+    topojson = context.eval("topojson.topology({collection: #{collection}})")
+
     return topojson
   end
   

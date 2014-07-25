@@ -8,7 +8,7 @@ module GeojsonHelper
     geojson_object["features"] = []
 
     geometry_collection.each_with_index do |record, index|
-    feature = RGeo::GeoJSON::Feature.new(record.shape, index, { :DM => record.dm } )
+    feature = RGeo::GeoJSON::Feature.new(record.shape, record.dm, { :index => index} ) # this is a hacky solution to the problem of promoting "DM" property to feature id in topojson
       geojson_object["features"].push(RGeo::GeoJSON.encode(feature))
     end
 
