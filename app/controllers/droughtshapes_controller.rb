@@ -1,6 +1,8 @@
 class DroughtshapesController < ApplicationController
   include ApplicationHelper
 
+  before_action :set_headers
+
   def index
     if params[:s]
       state_name = params[:s].split.map {|i| i.capitalize}.join(" ")
@@ -20,4 +22,10 @@ class DroughtshapesController < ApplicationController
       render json: about
     end
   end
+
+  private
+
+    def set_headers
+      headers['Access-Control-Allow-Origin'] = '*'
+    end
 end
