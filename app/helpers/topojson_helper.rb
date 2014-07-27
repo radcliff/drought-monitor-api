@@ -7,6 +7,7 @@ module TopojsonHelper
     context = ExecJS.compile(source)
 
     topojson = context.eval("topojson.topology({collection: #{collection}})")
+
     return topojson
   end
   
