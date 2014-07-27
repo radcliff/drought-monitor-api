@@ -10,9 +10,6 @@ gem 'spring', group: :development
 gem 'pg'
 gem 'activerecord-postgis-adapter' # provides a special ActiveRecord adapter for talking to PostGIS and handling geospatial data
 
-# rails_12factor provides static asset serving and logging on Heroku
-gem 'rails_12factor', group: :production
-
 # Use RGeo, a geospatial data library for Ruby, and related modules
 gem 'rgeo'
 gem 'rgeo-geojson'

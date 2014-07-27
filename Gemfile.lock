@@ -76,11 +76,6 @@ GEM
     rails-api (0.2.1)
       actionpack (>= 3.2.11)
       railties (>= 3.2.11)
-    rails_12factor (0.0.2)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.2)
-    rails_stdout_logging (0.0.3)
     railties (4.1.1)
       actionpack (= 4.1.1)
       activesupport (= 4.1.1)
@@ -136,7 +131,6 @@ DEPENDENCIES
   pry-rails
   rails (= 4.1.1)
   rails-api
-  rails_12factor
   rgeo
   rgeo-geojson
   rgeo-shapefile
