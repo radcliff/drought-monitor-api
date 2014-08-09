@@ -9,12 +9,11 @@ This Rails app exposes a public API for the US Drought Monitor dataset. It grabs
 
 
 ##Usage
-`http://secret-falls-4489.herokuapp.com/?s=new%20mexico&geo=true`
 
 | Parameter | Value  | Description                                             |
 |-----------|--------|---------------------------------------------------------|
 | s         | string | state name, replaces spaces with "%20"                  |
-| geo       | true   | required, responds with GeoJSON (topojson coming soon) |
+| geo       | true   | responds with GeoJSON (topojson coming soon) |
 
 ###Working with GeoJSON
 **When specifying** `geo=true` **in the query string:**
@@ -24,7 +23,7 @@ This Rails app exposes a public API for the US Drought Monitor dataset. It grabs
 * `DM` refers to the [USDM drought severity classification](http://droughtmonitor.unl.edu/AboutUs/ClassificationScheme.aspx) associated with this feature
 
 ###Working with TopoJSON
-**coming soon**
+
 
 
 ####Note:
