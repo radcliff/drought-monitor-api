@@ -13,7 +13,7 @@ This Rails app exposes a public API for the US Drought Monitor dataset. It grabs
 | Parameter | Value  | Description                                             |
 |-----------|--------|---------------------------------------------------------|
 | s         | string | state name, replaces spaces with "%20"                  |
-| geo       | true   | responds with GeoJSON (topojson coming soon) |
+| geo       | true   | responds with GeoJSON |
 
 ###Working with GeoJSON
 **When specifying** `geo=true` **in the query string:**
